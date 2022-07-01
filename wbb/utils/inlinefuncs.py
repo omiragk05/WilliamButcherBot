@@ -65,21 +65,15 @@ from wbb.utils.pastebin import paste
 
 keywords_list = [
     "image",
-    "wall",
-    "tmdb",
+    "wallpaper",
     "lyrics",
-    "exec",
-    "speedtest",
-    "search",
     "ping",
-    "tr",
+    "translate",
     "ud",
-    "yt",
-    "info",
+    "youtube",
     "google",
     "torrent",
     "wiki",
-    "music",
     "ytmusic",
 ]
 
@@ -102,14 +96,6 @@ async def inline_help_func(__HELP__):
             thumb_url="https://hamker.me/cy00x5x.png",
             reply_markup=buttons,
         ),
-        InlineQueryResultArticle(
-            title="Github Repo",
-            description="Get Github Respository Of Bot.",
-            input_message_content=InputTextMessageContent(
-                "https://github.com/thehamkercat/WilliamButcherBot"
-            ),
-            thumb_url="https://hamker.me/gjc9fo3.png",
-        ),
     ]
     answerss = await alive_function(answerss)
     return answerss
@@ -127,20 +113,18 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[William✨](https://github.com/thehamkercat/WilliamButcherBot):**
-**MainBot:** `{bot_state}`
-**UserBot:** `{ubot_state}`
+**Bot:** `{bot_state}`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/{USERBOT_USERNAME})
+**Profiles:** [BOT](t.me/{BOT_USERNAME})
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://static2.aniimg.com/upload/20170515/414/c/d/7/cd7EEF.jpg",
+            thumb_url="https://telegra.ph/file/1d3d724d5ffbb6086d0f5.png",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
@@ -441,51 +425,6 @@ async def tg_search_func(answers, text, user_id):
         )
         answers.append(result)
     return answers
-
-
-async def music_inline_func(answers, query):
-    chat_id = -1001445180719
-    group_invite = "https://t.me/joinchat/vSDE2DuGK4Y4Nzll"
-    try:
-        messages = [
-            m
-            async for m in app2.search_messages(
-                chat_id, query, filter="audio", limit=100
-            )
-        ]
-    except Exception as e:
-        print(e)
-        msg = f"You Need To Join Here With Your Bot And Userbot To Get Cached Music.\n{group_invite}"
-        answers.append(
-            InlineQueryResultArticle(
-                title="ERROR",
-                description="Click Here To Know More.",
-                input_message_content=InputTextMessageContent(
-                    msg, disable_web_page_preview=True
-                ),
-            )
-        )
-        return answers
-    messages_ids_and_duration = []
-    for f_ in messages:
-        messages_ids_and_duration.append(
-            {
-                "message_id": f_.message_id,
-                "duration": f_.audio.duration if f_.audio.duration else 0,
-            }
-        )
-    messages = list(
-        {v["duration"]: v for v in messages_ids_and_duration}.values()
-    )
-    messages_ids = [ff_["message_id"] for ff_ in messages]
-    messages = await app.get_messages(chat_id, messages_ids[0:48])
-    return [
-        InlineQueryResultCachedDocument(
-            file_id=message_.audio.file_id,
-            title=message_.audio.title,
-        )
-        for message_ in messages
-    ]
 
 
 async def wiki_func(answers, text):
