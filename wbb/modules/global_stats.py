@@ -141,7 +141,6 @@ async def global_stats(_, message):
     **{blacklist_filters_count}** Blacklist Filters, Across **{blacklist_filters_chats_count}** chats.
     **{notes_count}** Notes, Across **{notes_chats_count}** chats.
     **{warns_count}** Warns, Across **{warns_chats_count}** chats.
-    **{karmas_count}** Karma, Across **{karmas_chats_count}** chats.
     **{served_users}** Users, Across **{served_chats}** chats.
     **{developers}** Developers And **{commits}** Commits On **[Github]({rurl})**.
 
