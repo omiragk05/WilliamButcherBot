@@ -36,7 +36,7 @@ __HELP__ = """
 /q [INTEGER] - To quote more than 1 messages.
 /q r - to quote a message with it's reply
 
-Use .q to quote using userbot
+
 """
 
 
