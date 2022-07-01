@@ -117,10 +117,6 @@ home_keyboard_pm = InlineKeyboardMarkup(
             InlineKeyboardButton(
                 text="Commands ❓", callback_data="bot_commands"
             ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
-            ),
         ],
         [
             InlineKeyboardButton(
@@ -128,7 +124,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 callback_data="stats_callback",
             ),
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="Support 👨", url="http://t.me/omiragk"
             ),
         ],
         [
@@ -152,18 +148,14 @@ keyboard = InlineKeyboardMarkup(
             InlineKeyboardButton(
                 text="Help ❓",
                 url=f"t.me/{BOT_USERNAME}?start=help",
-            ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
-            ),
+            )
         ],
         [
             InlineKeyboardButton(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(text="Support 👨", url="t.me/omiragk"),
         ],
     ]
 )
@@ -309,6 +301,8 @@ Also you can ask anything in Support Group.
 General command are:
  - /start: Start the bot
  - /help: Give this message
+ 
+ bot by @omiragk ❤️
  """
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
