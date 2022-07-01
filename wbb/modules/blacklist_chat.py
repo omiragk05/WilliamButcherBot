@@ -8,18 +8,18 @@ from wbb.utils.dbfunctions import (
     blacklisted_chats,
     whitelist_chat,
 )
+#
+#__MODULE__ = "Blacklist Chat"
+#__HELP__ = """
+#**THIS MODULE IS ONLY FOR DEVS**
 
-__MODULE__ = "Blacklist Chat"
-__HELP__ = """
-**THIS MODULE IS ONLY FOR DEVS**
+##Use this module to make the bot leave some chats
+#in which you don't want it to be in.
 
-Use this module to make the bot leave some chats
-in which you don't want it to be in.
-
-/blacklist_chat [CHAT_ID] - Blacklist a chat.
-/whitelist_chat [CHAT_ID] - Whitelist a chat.
-/blacklisted - Show blacklisted chats.
-"""
+#/blacklist_chat [CHAT_ID] - Blacklist a chat.
+#/whitelist_chat [CHAT_ID] - Whitelist a chat.
+#/blacklisted - Show blacklisted chats.
+#"""
 
 
 @app.on_message(
