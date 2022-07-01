@@ -39,14 +39,11 @@ from wbb.utils.pastebin import paste
 
 __MODULE__ = "Misc"
 __HELP__ = """
-/asq
+/ask
     Ask a question
 
 /commit
     Generate Funny Commit Messages
-
-/runs
-    Idk Test Yourself
 
 /id
     Get Chat_ID or User_ID
@@ -64,10 +61,9 @@ __HELP__ = """
 /json [URL]
     Get parsed JSON response from a rest API.
 
-/arq
-    Statistics Of ARQ API.
 
-/webss | .webss [URL] [FULL_SIZE?, use (y|yes|true) to get full size image. (optional)]
+/webss [URL] [FULL_SIZE?, 
+use (y|yes|true) to get full size image. (optional)]
     Take A Screenshot Of A Webpage
 
 /reverse
@@ -88,13 +84,9 @@ __HELP__ = """
 /markdownhelp
     Sends mark down and formatting help.
 
-/backup
-    Backup database
-
 /ping
     Check ping of all 5 DCs.
-    
-#RTFM - Tell noobs to read the manual
+
 """
 
 ASQ_LOCK = Lock()
@@ -139,7 +131,7 @@ async def ping_handler(_, message):
         await m.edit(text)
 
 
-@app.on_message(filters.command("asq") & ~filters.edited)
+@app.on_message(filters.command("ask") & ~filters.edited)
 async def asq(_, message):
     err = "Reply to text message or pass the question as argument"
     if message.reply_to_message:
