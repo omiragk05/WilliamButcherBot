@@ -84,8 +84,6 @@ use (y|yes|true) to get full size image. (optional)]
 /markdownhelp
     Sends mark down and formatting help.
 
-/ping
-    Check ping of all 5 DCs.
 
 """
 
