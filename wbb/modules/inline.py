@@ -29,7 +29,9 @@ from wbb import app
 from wbb.utils.inlinefuncs import *
 
 __MODULE__ = "Inline"
-__HELP__ = """See inline for help related to inline"""
+__HELP__ = """See inline for help related to inline
+
+@MissAnna_robot type this username for see inline features """
 
 
 @app.on_inline_query()
